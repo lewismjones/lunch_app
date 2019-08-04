@@ -2,7 +2,7 @@ class SurveysController < ApplicationController
   http_basic_authenticate_with name: "", password: "password", except: [:new, :create]
 
   def index
-    @surveys = Survey.all
+    @surveys = Survey.today
   end
 
   def show
