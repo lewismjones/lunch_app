@@ -1,8 +1,8 @@
 <h1>Name: <%= @survey.participant %></h1>
 
 <h3>Chosen Restaurants:</h3>
-<% @restaurants.each do |x| %>
-<p><%=x.name%></p>
+<% @restaurants.each do |restuarant| %>
+<p><%=restaurant.name%></p>
 <%end%>
 
 <%= link_to 'Back to List', surveys_path %>

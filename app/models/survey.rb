@@ -5,13 +5,13 @@ class Survey < ApplicationRecord
 
   def self.result_participants
     participants = []
-    Survey.today.map { |x|  participants << x[:participant] }
+    Survey.today.map { |survey|  participants << survey[:participant] }
     participants.join(", ").titleize
   end
 
   def self.top_contenders
     candidates = []
-    Survey.today.map { |x|  candidates << x[:response].split(",") }
+    Survey.today.map { |survey|  candidates << survey[:response].split(",") }
     candidates = candidates.flatten.group_by(&:itself).transform_values(&:count)
     result = candidates.select {|k,v| v == candidates.values.max}.keys
     return [result, candidates.values.max]

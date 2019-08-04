@@ -1,10 +1,10 @@
 <h1>Greetings</h1>
 <p>This is how we choose the lunch.</p>
-<% if Survey.any? %>
+<% if @frontrunners.any? %>
   Frontrunner(s):
   <br>
-  <% Restaurant.where(id: Survey.top_contenders.first).each do |x| %>
-  <%=x.name%>
+  <% @frontrunners.each do |restaurant| %>
+  <%=restaurant.name%>
   <br>
   <%end%>
 <%end%>
