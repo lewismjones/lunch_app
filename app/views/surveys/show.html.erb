@@ -1,7 +1,7 @@
 <h1>Name: <%= @survey.participant %></h1>
 
 <h3>Chosen Restaurants:</h3>
-<% Restaurant.where(id: @ids).each do |x| %>
+<% @restaurants.each do |x| %>
 <p><%=x.name%></p>
 <%end%>
 

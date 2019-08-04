@@ -1,13 +1,14 @@
 class SurveysController < ApplicationController
   http_basic_authenticate_with name: "", password: "password", except: [:new, :create]
+  before_action :get_surveys, only: [:index, :results]
+  before_action :get_restaurants, only: [:new, :create]
 
   def index
-    @surveys = Survey.today
   end
 
   def show
     @survey = Survey.find(params[:id])
-    @ids = @survey.response.split(",")
+    @restaurants = Restaurant.where(id: @survey.response.split(","))
   end
 
   def new
@@ -39,5 +40,13 @@ class SurveysController < ApplicationController
   def survey_params
     params[:survey][:response] = params[:survey][:response].join(",") unless params[:survey][:response].class != Array
     params.require(:survey).permit(:participant, :response)
+  end
+
+  def get_surveys
+    @surveys = Survey.today
+  end
+
+  def get_restaurants
+    @restaurants = Restaurant.alpha_sort
   end
 end

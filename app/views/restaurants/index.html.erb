@@ -1,10 +1,11 @@
 <h1>Restaurants</h1>
 <table>
   <tr>
-    <th>Name</th>
-    <th>Distance</th>
-    <th>Drinks?</th>
-    <th>Brunch?</th>
+    <th><%= link_to 'Name', restaurants_path %></th>
+    <th><%= link_to 'Distance?', restaurants_path(sort: 'distance') %></th>
+    <th><%= link_to 'Drinks?', restaurants_path(sort: 'drinks') %></th>
+    <th><%= link_to 'Brunch?', restaurants_path(sort: 'brunch') %>
+</th>
     <th>Website</th>
 
     <th></th>
@@ -15,7 +16,7 @@
       <td><%= restaurant.distance %></td>
       <td><%= restaurant.drinks ? "✓" : "X"  %></td>
       <td><%= restaurant.brunch ? "✓" : "X"  %></td>
-      <td><%= link_to restaurant.website, "http://#{restaurant.website}", target: "blank" %></td>
+      <td><%= link_to "🍆", restaurant.website, target: "blank" %></td>
       <td><%= link_to 'View', restaurant_path(restaurant) %></td>
       <td><%= link_to 'Edit', edit_restaurant_path(restaurant) %></td>
       <td><%= link_to 'Destroy', restaurant_path(restaurant),

@@ -1,8 +1,8 @@
 <h1>Results are In</h1>
 
-<% if Survey.today.any? %>
-  <h3>These peeps are coming: <%=Survey.result_participants%></h3><br>
-  <h3>This is where we going: <%=Survey.result_winner.first%> (<%=Survey.unanimous? ? "Unanimous" : Survey.top_contenders.last.to_s + "Agreed" %> )</h3>
+<% if @surveys.today.any? %>
+  <h3>These peeps are coming: <%=@surveys.result_participants%></h3>
+  <h3>This is where we going: <%=@surveys.result_winner%> (<%= @surveys.unanimous? ? "Unanimous" : @surveys.top_contenders.last.to_s + " Agreed" %> )</h3>
 <% else %>
   <h3>No Surveys Submitted Today</h3>
 <%end%>

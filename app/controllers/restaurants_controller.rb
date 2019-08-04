@@ -2,7 +2,16 @@ class RestaurantsController < ApplicationController
   http_basic_authenticate_with name: "", password: "password"
 
   def index
-    @restaurants = Restaurant.all
+    case params[:sort]
+    when 'brunch'
+      @restaurants = Restaurant.brunch
+    when 'drinks'
+      @restaurants = Restaurant.drinks
+    when 'distance'
+      @restaurants = Restaurant.distance
+    else
+      @restaurants = Restaurant.alpha_sort
+    end
   end
 
   def show

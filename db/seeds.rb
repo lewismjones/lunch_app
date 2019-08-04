@@ -1,7 +1,35 @@
-# This file should contain all the record creation needed to seed the database with its default values.
-# The data can then be loaded with the rails db:seed command (or created alongside the database with db:setup).
-#
-# Examples:
-#
-#   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
-#   Character.create(name: 'Luke', movie: movies.first)
+Restaurant.create!([
+  {name: "Twin Peaks", distance: 7, drinks: true, brunch: false, website: "https://twinpeaksrestaurant.com/locations/davie-fl", notes: ""},
+  {name: "Bento", distance: 7, drinks: false, brunch: false, website: "http://www.eatatbento.com/south-florida-davie/", notes: ""},
+  {name: "Mash'd", distance: 7, drinks: true, brunch: false, website: "https://mashd.com/location-davie/", notes: ""},
+  {name: "Halal Bros", distance: 7, drinks: false, brunch: false, website: "http://www.thehalalbros.com/", notes: ""},
+  {name: "Louis K's Club Sandwich", distance: 6, drinks: false, brunch: false, website: "", notes: "small interior"},
+  {name: "Ally's Cafe", distance: 1, drinks: false, brunch: true, website: "http://www.allyscomfortcafe.net/", notes: ""},
+  {name: "Kristof's Kafe", distance: 5, drinks: false, brunch: true, website: "https://www.kristofskafe.com/", notes: ""},
+  {name: "Lester's Diner", distance: 1, drinks: false, brunch: true, website: "http://lestersdiner.com/sunrise-2/", notes: ""},
+  {name: "4 Rivers", distance: 15, drinks: false, brunch: false, website: "https://4rsmokehouse.com/locations/coral-springs", notes: ""},
+  {name: "Mall Food Court", distance: 2, drinks: false, brunch: false, website: "", notes: ""},
+  {name: "Rob's BBQ", distance: 5, drinks: false, brunch: false, website: "https://robsfamilybbq.com/", notes: ""},
+  {name: "Uncle Al's", distance: 5, drinks: true, brunch: false, website: "https://unclealscafe.com/", notes: ""},
+  {name: "Sal's", distance: 1, drinks: false, brunch: false, website: "https://www.salsitalianristorante.com/", notes: ""},
+  {name: "Five Guys", distance: 1, drinks: false, brunch: false, website: "http://www.fiveguys.com/", notes: ""},
+  {name: "Matchbox", distance: 2, drinks: true, brunch: false, website: "https://www.matchboxrestaurants.com/sawgrass-mills", notes: ""},
+  {name: "Don Carlin", distance: 4, drinks: false, brunch: false, website: "", notes: ""},
+  {name: "About Time Cafe", distance: 4, drinks: false, brunch: true, website: "https://www.abouttimecafe.com/", notes: ""},
+  {name: "Tijuana Flats", distance: 7, drinks: false, brunch: false, website: "https://tijuanaflats.com/", notes: ""},
+  {name: "Lime", distance: 6, drinks: false, brunch: false, website: "https://limefreshmexicangrill.com/", notes: ""},
+  {name: "Toojay's", distance: 6, drinks: false, brunch: true, website: "https://www.toojays.com/", notes: ""},
+  {name: "Tin Fish", distance: 5, drinks: false, brunch: false, website: "https://tinfishsunrise.com/", notes: ""},
+  {name: "King's Head Pub", distance: 6, drinks: false, brunch: false, website: "", notes: ""},
+  {name: "Yardhouse", distance: 2, drinks: true, brunch: false, website: "https://www.yardhouse.com/home", notes: ""},
+  {name: "Little Japan", distance: 1, drinks: false, brunch: false, website: "https://www.littlejapandavie.com/Home.html", notes: ""},
+  {name: "Jersey Mike's", distance: 9, drinks: false, brunch: false, website: "https://www.jerseymikes.com/", notes: ""},
+  {name: "Mission BBQ", distance: 9, drinks: false, brunch: false, website: "https://mission-bbq.com/", notes: ""},
+  {name: "La Bamba", distance: 4, drinks: false, brunch: false, website: "https://labamba123.com/", notes: ""},
+  {name: "La Rural", distance: 7, drinks: false, brunch: false, website: "https://www.laruralgroup.com/", notes: ""},
+  {name: "Bap Bistro", distance: 1, drinks: false, brunch: false, website: "http://www.bapbistro.com/", notes: ""},
+  {name: "Habit Burger", distance: 6, drinks: false, brunch: false, website: "https://www.habitburger.com/", notes: ""},
+  {name: "Mitch's Westside Bagels", distance: 7, drinks: false, brunch: false, website: "http://mitchswestsidebagels.com", notes: ""},
+  {name: "Flanigans", distance: 1, drinks: true, brunch: false, website: "https://www.flanigans.net/", notes: "opening soon nearby"},
+  {name: "Gyroville", distance: 6, drinks: false, brunch: false, website: "https://www.gyroville.com/", notes: ""}
+])
