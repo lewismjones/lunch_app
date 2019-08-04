@@ -1,0 +1,44 @@
+<%= form_with(model: @restaurant, local: true) do |form| %>
+
+  <% if @restaurant.errors.any? %>
+    <div id="error_explanation">
+      <h2>Ya blew it kid:</h2>
+      <ul>
+        <% @restaurant.errors.full_messages.each do |msg| %>
+          <li><%= msg %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <p>
+    <%= form.label :name %><br>
+    <%= form.text_field :name %>
+  </p>
+
+  <p>
+    <%= form.label :distance, "Distance (mi)" %><br>
+    <%= form.number_field :distance %>
+  </p>
+
+  <p>
+    <%= form.label :drinks %><br>
+    <%= form.check_box :drinks, {}, 1, 0 %>
+  </p>
+
+  <p>
+    <%= form.label :brunch %><br>
+    <%= form.check_box :brunch, {}, 1, 0 %>
+  </p>
+
+
+  <p>
+    <%= form.label :website %><br>
+    <%= form.text_field :website %>
+  </p>
+
+  <p>
+    <%= form.submit %>
+  </p>
+
+<% end %>

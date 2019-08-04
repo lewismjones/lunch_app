@@ -1,0 +1,13 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  name: MyString
+  distance: 1
+  drinks: false
+  website: MyString
+
+two:
+  name: MyString
+  distance: 1
+  drinks: false
+  website: MyString

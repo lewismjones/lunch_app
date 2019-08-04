@@ -1,0 +1,30 @@
+<h1>Restaurants</h1>
+
+<table>
+  <tr>
+    <th>Name</th>
+    <th>Distance</th>
+    <th>Drinks?</th>
+    <th>Brunch?</th>
+    <th>Website</th>
+
+    <th></th>
+  </tr>
+  <% @restaurants.each do |restaurant| %>
+    <tr>
+      <td><%= restaurant.name %></td>
+      <td><%= restaurant.distance %></td>
+      <td><%= restaurant.drinks ? "✓" : "X"  %></td>
+      <td><%= restaurant.brunch ? "✓" : "X"  %></td>
+      <td><%= link_to restaurant.website, "http://#{restaurant.website}", target: "blank" %></td>
+      <td><%= link_to 'View', restaurant_path(restaurant) %></td>
+      <td><%= link_to 'Edit', edit_restaurant_path(restaurant) %></td>
+      <td><%= link_to 'Destroy', restaurant_path(restaurant),
+                    method: :delete,
+                    data: { confirm: 'Are you sure?' } %></td>
+    </tr>
+  <% end %>
+</table>
+
+
+<%= link_to 'New Restaurant', new_restaurant_path %>
