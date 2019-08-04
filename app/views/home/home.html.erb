@@ -1,11 +1,12 @@
 <h1>Greetings</h1>
 <p>This is how we choose the lunch.</p>
-
-Frontrunner(s):
-<br>
-<% Restaurant.where(id: Survey.top_contenders.first).each do |x| %>
-<%=x.name%>
-<br>
+<% if Survey.any? %>
+  Frontrunner(s):
+  <br>
+  <% Restaurant.where(id: Survey.top_contenders.first).each do |x| %>
+  <%=x.name%>
+  <br>
+  <%end%>
 <%end%>
 
 
