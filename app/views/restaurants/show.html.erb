@@ -20,5 +20,11 @@
   <strong>Website:</strong>
   <%= @restaurant.website %>
 </p>
+
+<p>
+  <strong>Notes:</strong>
+  <%= @restaurant.notes %>
+</p>
+
 <%= link_to 'Edit', edit_restaurant_path(@restaurant) %><br>
 <%= link_to 'Back to List', restaurants_path %>
