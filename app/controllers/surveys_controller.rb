@@ -1,4 +1,15 @@
 class SurveysController < ApplicationController
+  http_basic_authenticate_with name: "", password: "password", except: [:new, :create]
+
+  def index
+    @surveys = Survey.all
+  end
+
+  def show
+    @survey = Survey.find(params[:id])
+    @ids = @survey.response.split(",")
+  end
+
   def new
     @survey = Survey.new
   end
@@ -12,6 +23,17 @@ class SurveysController < ApplicationController
       render 'new'
     end
   end
+
+  def destroy
+   @survey = Survey.find(params[:id])
+   @survey.destroy
+
+   redirect_to surveys_path
+ end
+
+ def results
+ end
+
 
   private
   def survey_params

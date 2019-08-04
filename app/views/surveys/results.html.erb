@@ -2,9 +2,9 @@
 
 <% if Survey.today.any? %>
   <h3>These peeps are coming: <%=Survey.result_participants%></h3><br>
-  <h3>This is where we going: <%=Survey.result_winner.first%> (<%=Survey.concensus? ? "All" : Survey.result_winner.last %> Agreed)</h3>
+  <h3>This is where we going: <%=Survey.result_winner.first%> (<%=Survey.unanimous? ? "Unanimous" : Survey.top_contenders.last.to_s + "Agreed" %> )</h3>
 <% else %>
   <h3>No Surveys Submitted Today</h3>
 <%end%>
 <br>
-<%= link_to 'Back to List', restaurants_path %>
+<%= link_to 'Admin', admin_path %>

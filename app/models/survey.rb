@@ -9,15 +9,19 @@ class Survey < ApplicationRecord
     participants.join(", ").titleize
   end
 
-  def self.result_winner
+  def self.top_contenders
     candidates = []
     Survey.today.map { |x|  candidates << x[:response].split(",") }
     candidates = candidates.flatten.group_by(&:itself).transform_values(&:count)
-    result = candidates.select {|k,v| v == candidates.values.max}.keys.sample.to_i
-    return [Restaurant.find(result).name, candidates.values.max]
+    result = candidates.select {|k,v| v == candidates.values.max}.keys
+    return [result, candidates.values.max]
   end
 
-  def self.concensus?
-    Survey.result_winner.last == Survey.today.count
+  def self.result_winner
+    Restaurant.find(top_contenders.first.sample.to_i).name
+  end
+
+  def self.unanimous?
+    Survey.top_contenders.last == Survey.today.count
   end
 end

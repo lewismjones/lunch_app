@@ -1,5 +1,6 @@
 class RestaurantsController < ApplicationController
-  #index, show, new, edit, create, update and destroy
+  http_basic_authenticate_with name: "", password: "password"
+
   def index
     @restaurants = Restaurant.all
   end

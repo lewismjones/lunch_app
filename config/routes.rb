@@ -1,11 +1,11 @@
 Rails.application.routes.draw do
-  get 'home/index'
+  get 'home', to: 'home#home'
+  get 'admin', to: 'home#admin'
 
   resources :restaurants
+  resources :surveys, only: [:show, :index, :destroy, :new, :create]
 
-  get 'surveys/new'
-  post 'surveys/new', to: 'surveys#create'
-  get 'surveys/results'
+  get 'survey/results', to: 'surveys#results'
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
-root 'home#index'
+root 'home#home'
 end
