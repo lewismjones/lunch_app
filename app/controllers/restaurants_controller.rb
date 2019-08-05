@@ -1,5 +1,5 @@
 class RestaurantsController < ApplicationController
-  http_basic_authenticate_with name: "", password: "password"
+  http_basic_authenticate_with name: "", password: PASSWORD
 
   def index
     case params[:sort]
