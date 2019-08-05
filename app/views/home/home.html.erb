@@ -4,11 +4,9 @@
         <p>This is how we choose the lunch.</p>
         <% if @frontrunners.any? %>
         Frontrunner(s):
-        <br>
         <% @frontrunners.each do |restaurant| %>
         <%=restaurant.name%>
-        <br>
         <%end%>
         <%end%>
-        <%= link_to 'New Survey', new_survey_path %>
+        <%= link_to 'Get started.', new_survey_path %>
     </main>
