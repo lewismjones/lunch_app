@@ -1,15 +1,14 @@
-<h1>Greetings</h1>
-<p>This is how we choose the lunch.</p>
-<% if @frontrunners.any? %>
-  Frontrunner(s):
-  <br>
-  <% @frontrunners.each do |restaurant| %>
-  <%=restaurant.name%>
-  <br>
-  <%end%>
-<%end%>
 
-
-<%= link_to 'New Survey', new_survey_path %>
-<br>
-<%= link_to 'Admin', admin_path %>
+    <main class="main">
+        <h1>LunchApp</h1>
+        <p>This is how we choose the lunch.</p>
+        <% if @frontrunners.any? %>
+        Frontrunner(s):
+        <br>
+        <% @frontrunners.each do |restaurant| %>
+        <%=restaurant.name%>
+        <br>
+        <%end%>
+        <%end%>
+        <%= link_to 'New Survey', new_survey_path %>
+    </main>
