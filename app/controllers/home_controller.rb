@@ -1,6 +1,5 @@
 class HomeController < ApplicationController
-  load '.config'
-  http_basic_authenticate_with name: "", password: PASSWORD, only: [:admin]
+  http_basic_authenticate_with name: "", password: "yeet", only: [:admin]
 
   def home
     @frontrunners = Restaurant.where(id: Survey.top_contenders.first)
