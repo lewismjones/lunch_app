@@ -1,7 +1,5 @@
-
-    <main class="main">
         <h1>LunchApp</h1>
-        <p>This is how we choose the lunch.</p>
+        <h3>This is how we choose the lunch. Consider this your invite, dummy.</h3>
         <% if @frontrunners.any? %>
         <p>Frontrunner(s):</p>
         <p><% @frontrunners.each do |restaurant| %>
@@ -10,4 +8,3 @@
         <%end%>
         </p>
         <p> <%= link_to 'Get started.', new_survey_path %> </p> 
-    </main>
