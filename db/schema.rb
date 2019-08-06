@@ -12,7 +12,10 @@
 
 ActiveRecord::Schema.define(version: 2019_08_04_200823) do
 
-  create_table "restaurants", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
+  # These are extensions that must be enabled in order to support this database
+  enable_extension "plpgsql"
+
+  create_table "restaurants", force: :cascade do |t|
     t.string "name"
     t.integer "distance"
     t.boolean "drinks"
@@ -23,7 +26,7 @@ ActiveRecord::Schema.define(version: 2019_08_04_200823) do
     t.string "notes"
   end
 
-  create_table "surveys", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
+  create_table "surveys", force: :cascade do |t|
     t.string "participant"
     t.string "response"
     t.datetime "created_at", null: false

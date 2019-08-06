@@ -1,6 +1,5 @@
 class SurveysController < ApplicationController
-  load '.config'
-  http_basic_authenticate_with name: "", password: PASSWORD, except: [:new, :create]
+  http_basic_authenticate_with name: "", password: ENV['PASSWORD'], except: [:new, :create]
   before_action :get_surveys, only: [:index, :results]
   before_action :get_restaurants, only: [:new, :create]
 
