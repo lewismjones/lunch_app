@@ -2,9 +2,8 @@
 
 <% if @surveys.today.any? %>
   <h3>These peeps are coming: <%=@surveys.result_participants%></h3>
-  <h3>This is where we going: <%=@surveys.result_winner%> (<%= @surveys.unanimous? ? "Unanimous" : @surveys.top_contenders.last.to_s + " Agreed" %> )</h3>
+  <h3>This is where we going: <%=@surveys.result_winner%> (<%= @surveys.unanimous? ? "Unanimous" : @surveys.top_contenders.last.to_s + " Agreed" %>)</h3>
+  <h3>Post Lunch: <%=@surveys.post_lunch.count.to_s + "/" + @surveys.count.to_s%></h3>
 <% else %>
   <h3>No Surveys Submitted Today</h3>
 <%end%>
-<br>
-<%= link_to 'Admin', admin_path %>

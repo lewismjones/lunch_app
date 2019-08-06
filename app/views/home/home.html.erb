@@ -3,10 +3,11 @@
         <h1>LunchApp</h1>
         <p>This is how we choose the lunch.</p>
         <% if @frontrunners.any? %>
-        Frontrunner(s):
-        <% @frontrunners.each do |restaurant| %>
-        <%=restaurant.name%>
+        <p>Frontrunner(s):</p>
+        <p><% @frontrunners.each do |restaurant| %>
+        <%=restaurant.name%> ⍚
         <%end%>
         <%end%>
-        <%= link_to 'Get started.', new_survey_path %>
+        </p>
+        <p> <%= link_to 'Get started.', new_survey_path %> </p> 
     </main>
