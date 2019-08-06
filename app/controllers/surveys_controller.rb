@@ -39,7 +39,7 @@ class SurveysController < ApplicationController
   private
   def survey_params
     params[:survey][:response] = params[:survey][:response].join(",") unless params[:survey][:response].class != Array
-    params.require(:survey).permit(:participant, :response)
+    params.require(:survey).permit(:participant, :response, :post_lunch)
   end
 
   def get_surveys

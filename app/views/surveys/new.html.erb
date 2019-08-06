@@ -17,8 +17,17 @@
     <% end %>
     <p>
         <%= form.label :participant, "Participant Name" %><br>
-        <%= form.text_field :participant %>
+        <%= form.text_field :participant, value: @survey.participant %>
     </p>
+    <p>
+        <%= form.label :post_lunch, "Post Lunch?" %>
+        <%= form.label :post_lunch, "Yes", :value => "true"  %>
+        <%= form.radio_button :post_lunch, true%>
+        <%= form.label :post_lunch, "No", :value => "false"  %>
+        <%= form.radio_button :post_lunch, false%>
+
+    </p>
+
     <table>
         <tr>
             <th>Name</th>
@@ -38,7 +47,7 @@
                 <%= restaurant.brunch ? "yeet" : "nope"   %>
             </td>
             <td class="voteColumn">
-                <%= form.check_box :response, {multiple: true}, restaurant.id, nil%>
+                <%= form.check_box :response, {multiple: true, checked: @survey.response&.include?(restaurant.id.to_s)}, restaurant.id, nil%>
             </td>
         </tr>
         <%end%>
