@@ -1,6 +1,6 @@
 class Survey < ApplicationRecord
   validates :participant, presence: {message: "can't be blank, ya dingus!"}
-  validates :response, presence: {message: "You must choose at least one restaurant bro!"}
+  validates :response, presence: {message: "You must choose at least one restaurant, bro!"}
   scope :today, -> { where('DATE(created_at) = ?', Date.today)}
 
   def self.result_participants

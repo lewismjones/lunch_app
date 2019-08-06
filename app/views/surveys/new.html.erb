@@ -1,44 +1,51 @@
-<h1>New Survey</h1>
-
-<%= form_with(model: @survey, url: surveys_path, local: true) do |form| %>
-
-  <% if @survey.errors.any? %>
+<main class="main">
+    <h1>LunchApp</h1>
+    <h2>New Survey</h2>
+    <%= form_with(model: @survey, url: surveys_path, local: true) do |form| %>
+    <% if @survey.errors.any? %>
     <div id="error_explanation">
-      <h2>Ya blew it kid:</h2>
-      <ul>
-        <% @survey.errors.full_messages.each do |msg| %>
-          <li><%= msg.gsub("Response ", "") %></li>
-        <% end %>
-      </ul>
+        <h3 id="disappointed">Not mad, just disappointed...</h3>
+        <ul>
+            <% @survey.errors.full_messages.each do |msg| %>
+            <li>
+                <%= msg.gsub("Response ", "") %>
+            </li>
+            <% end %>
+        </ul>
+        <h3 id="again">Let's try this again.</h3>
     </div>
-  <% end %>
-
-  <p>
-    <%= form.label :participant, "Participant Name" %><br>
-    <%= form.text_field :participant %>
-  </p>
-<table>
-  <tr>
-    <th>Name</th>
-    <th>Drinks?</th>
-    <th>Brunch?</th>
-    <th>Wanna go?</th>
-  </tr>
-  <% @restaurants.each do |restaurant|%>
-  <tr>
-    <td><%= form.label :response, restaurant.name.titleize, for: "survey_response_#{restaurant.id}"%></td>
-    <td><%= restaurant.drinks ? "✓" : "X"  %></td>
-    <td><%= restaurant.brunch ? "✓" : "X"  %></td>
-    <td><%= form.check_box :response, {multiple: true}, restaurant.id, nil%></td>
-  </tr>
-  <%end%>
-
-</table>
-
-  <p>
-    <%= form.submit "Submit" %>
-  </p>
-
-<% end %>
-
-<%= link_to 'Home', home_path %>
+    <% end %>
+    <p>
+        <%= form.label :participant, "Participant Name" %><br>
+        <%= form.text_field :participant %>
+    </p>
+    <table>
+        <tr>
+            <th>Name</th>
+            <th>Drinks?</th>
+            <th>Brunch?</th>
+            <th>Wanna go?</th>
+        </tr>
+        <% @restaurants.each do |restaurant|%>
+        <tr>
+            <td class="nameColumn">
+                <%= form.label :response, restaurant.name.titleize, for: "survey_response_#{restaurant.id}"%>
+            </td>
+            <td class="drinksColumn">
+                <%= restaurant.drinks ? "yeet" : "nope"  %>
+            </td>
+            <td class="brunchColumn">
+                <%= restaurant.brunch ? "yeet" : "nope"   %>
+            </td>
+            <td class="voteColumn">
+                <%= form.check_box :response, {multiple: true}, restaurant.id, nil%>
+            </td>
+        </tr>
+        <%end%>
+    </table>
+    <p>
+        <%= form.submit "Submit" %>
+    </p>
+    <% end %>
+    <%= link_to 'Home', home_path %>
+</main>

@@ -1,3 +1,101 @@
 // Place all the styles related to the Surveys controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+* {
+    font-family: "Lucida Console", Monaco, monospace;
+}
+
+#error_explanation {
+    display: flex;
+    flex-direction: column;
+    color: #800000;
+}
+
+.main {
+    display: flex;
+    justify-content: center;
+    font-family: "Lucida Console", Monaco, monospace;
+    color: #003366;
+    display: flex;
+    flex-direction: column;
+    margin: 0 20% 5% 20%;
+    flex: 1;
+    height: 90%;
+}
+
+table {
+    border-collapse: collapse;
+}
+
+table,
+th,
+td {
+    border: 1px solid transparent;
+    padding: 3px 5px;
+    vertical-align: middle;
+}
+
+tr:nth-child(even) {
+    background-color: #fdfcfb;
+}
+
+tr:nth-child(odd) {
+    background-color: #ccd6e0;
+}
+
+#disappointed {
+    flex-direction: row;
+    justify-content: flex-start;
+    margin: 10px 0 10px 0;
+}
+
+#again {
+    flex-direction: row;
+    justify-content: flex-end;
+    margin: 10px 0 10px auto;
+
+}
+.voteColumn {
+    text-align: center;
+    vertical-align: middle;
+}
+
+ul {
+    margin: auto;
+    list-style-type: none;
+}
+
+.drinksColumn, .brunchColumn {
+ padding: 0 5px;
+}
+input[type=submit] {
+    color: #fefbf7;
+    border: 1px solid transparent;
+    border-radius: 4%;
+    background-color: #325b84;
+    padding: 4px 24px;
+    flex-direction: row;
+    justify-content: flex-end;
+}
+
+input[type=submit]:hover {
+    background-color: #003366;
+}
+
+input[type=submit]:active {
+    background-color: #002851;
+}
+
+a {
+    color: #2c87f0;
+}
+
+a:visited {
+    color: #2c87f0;
+}
+
+a:hover,
+a:active,
+a:focus {
+    color: #800000;
+}
