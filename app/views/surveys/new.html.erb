@@ -1,4 +1,3 @@
-<main class="main">
     <h1>LunchApp</h1>
     <h2>New Survey</h2>
     <%= form_with(model: @survey, url: surveys_path, local: true) do |form| %>
@@ -41,10 +40,10 @@
                 <%= form.label :response, restaurant.name.titleize, for: "survey_response_#{restaurant.id}"%>
             </td>
             <td class="drinksColumn">
-                <%= restaurant.drinks ? "yeet" : "nope"  %>
+                <div class=<%=restaurant.drinks ? "green" : "red"%>> <%= restaurant.drinks ? "yeet" : "nope"   %> </div>
             </td>
             <td class="brunchColumn">
-                <%= restaurant.brunch ? "yeet" : "nope"   %>
+                <div class=<%=restaurant.brunch ? "green" : "red"%>> <%= restaurant.brunch ? "yeet" : "nope"   %> </div>
             </td>
             <td class="voteColumn">
                 <%= form.check_box :response, {multiple: true, checked: @survey.response&.include?(restaurant.id.to_s)}, restaurant.id, nil%>
@@ -57,4 +56,3 @@
     </p>
     <% end %>
     <%= link_to 'Home', home_path %>
-</main>
