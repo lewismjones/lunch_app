@@ -15,5 +15,3 @@ production:
   encoding: utf8
   database: lunch_app_production
   pool: 5
-  username: lunch_app
-  password: <%= ENV['DB_PASSWORD'] %>
