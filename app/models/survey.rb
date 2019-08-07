@@ -1,6 +1,6 @@
 class Survey < ApplicationRecord
   validates :participant, presence: {message: "can't be blank, ya dingus!"}
-  validates :response, presence: {message: "You must choose at least one restaurant, bro!"}
+  validate :response_more_than_three?
   validates :post_lunch, inclusion: { in: [ true, false ], message: "question must be answered!" }
   scope :today, -> { where('DATE(created_at) = ?', Date.today)}
   scope :post_lunch, -> { where(post_lunch: true)}
@@ -25,6 +25,12 @@ class Survey < ApplicationRecord
 
   def self.unanimous?
     Survey.top_contenders.last == Survey.today.count
+  end
+
+  def response_more_than_three?
+    if response.nil? || response&.split(",").count < 3
+      errors.add(:response, "Pick a few, c’mon! (That’s three, Chump.)")
+    end
   end
 
 end

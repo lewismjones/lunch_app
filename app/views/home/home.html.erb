@@ -1,10 +1,12 @@
-        <h1>LunchApp</h1>
-        <h3>This is how we choose the lunch. Consider this your invite, dummy.</h3>
-        <% if @frontrunners.any? %>
-        <p>Frontrunner(s):</p>
-        <p><% @frontrunners.each do |restaurant| %>
-        <%=restaurant.name%> ⍚
-        <%end%>
-        <%end%>
-        </p>
-        <p> <%= link_to 'Get started.', new_survey_path %> </p> 
+<h1>LunchApp</h1>
+<h3>This is how we choose the lunch. Consider this your invite, dummy.</h3>
+  <% if @frontrunners.any? %>
+    <p>Frontrunner(s):</p>
+    <p><% @frontrunners.each do |restaurant| %>
+       <%=link_to restaurant.name, restaurant.website, {target: "blank"}%> ⍚
+      <%end%>
+    </p>
+  <%else%>
+    <p>No one has responded yet 😩 </p>
+  <%end%>
+<p> <%= link_to 'Get started.', new_survey_path %> </p>
