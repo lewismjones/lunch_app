@@ -1,5 +1,7 @@
 <h1>Edit <%=@restaurant.name.titleize%></h1>
 
+<%= render 'errors' %>
+
 <%= render 'form' %>
 
 <%= link_to 'Back', restaurants_path %>
