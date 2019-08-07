@@ -1,6 +1,6 @@
     <h1>LunchApp</h1>
     <h2>New Survey</h2>
-    <%= form_with(model: @survey, url: surveys_path, local: true) do |form| %>
+
     <% if @survey.errors.any? %>
     <div id="error_explanation">
         <h3 id="disappointed">Not mad, just disappointed...</h3>
@@ -14,6 +14,8 @@
         <h3 id="again">Let's try this again.</h3>
     </div>
     <% end %>
+
+    <%= form_with(model: @survey, url: surveys_path, local: true) do |form| %>
     <p>
         <%= form.label :participant, "Participant Name" %><br>
         <%= form.text_field :participant, value: @survey.participant %>
@@ -26,7 +28,7 @@
         <%= form.radio_button :post_lunch, false%>
 
     </p>
-    
+
     <table>
         <tr>
             <th>Name</th>
