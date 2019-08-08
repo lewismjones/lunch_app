@@ -1,4 +1,6 @@
-<%= link_to 'Restaurants', restaurants_path %><br>
-<%= link_to 'Surveys', surveys_path %><br>
-<%= link_to 'Get Results', survey_results_path %><br>
-<%= link_to 'Home', home_path %>
+<div class="admin-link-container">
+   <%= link_to 'Restaurants', restaurants_path, class: "admin-link" %>
+  <%= link_to 'Surveys', surveys_path, class: "admin-link"  %>
+  <%= link_to 'Results', survey_results_path, class: "admin-link"  %>
+  <%= link_to 'Home', home_path, class: "admin-link"  %>
+</div>
