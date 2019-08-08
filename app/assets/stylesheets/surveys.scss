@@ -107,3 +107,19 @@ a:focus,
 .green {
     color: #145314
 }
+
+.participant,
+.post_lunch {
+    display: flex;
+    padding-bottom: 5px;
+}
+
+.participant {
+    flex-direction: column;
+}
+
+label[for=survey_post_lunch_false],
+label[for=survey_post_lunch_true] {
+    padding-right: 3px;
+    padding-left: 3px;
+}
