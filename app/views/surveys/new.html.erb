@@ -1,15 +1,14 @@
-<h1>LunchApp</h1>
-<h2>New Survey</h2>
+<h2>Whatcha Tryin to Eat??</h2>
 <% if @survey.errors.any? %>
 <div id="error_explanation">
     <h3 id="disappointed">Not mad, just disappointed...</h3>
-    <ul>
+    <ol class="error_list">
         <% @survey.errors.full_messages.each do |msg| %>
         <li>
             <%= msg.gsub("Response ", "") %>
         </li>
         <% end %>
-    </ul>
+    </ol>
     <h3 id="again">Let's try this again.</h3>
 </div>
 <% end %>
