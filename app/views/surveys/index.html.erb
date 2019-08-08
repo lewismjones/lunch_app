@@ -2,15 +2,17 @@
 <table>
   <tr>
     <th>Participant</th>
-
+    <th>Actions</th>
   </tr>
   <% @surveys.each do |survey| %>
     <tr>
       <td><%= survey.participant %></td>
-      <td><%= link_to 'View', survey_path(survey) %></td>
-      <td><%= link_to 'Destroy', survey_path(survey),
+      <td>
+        <%= link_to '🔍', survey_path(survey) %>
+        <%= link_to '🗑', survey_path(survey),
                     method: :delete,
-                    data: { confirm: 'Are you sure?' } %></td>
+                    data: { confirm: 'Are you sure?' } %>
+      </td>
     </tr>
   <% end %>
 </table>
