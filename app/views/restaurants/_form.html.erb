@@ -1,16 +1,5 @@
 <%= form_with(model: @restaurant, local: true) do |form| %>
 
-  <% if @restaurant.errors.any? %>
-    <div id="error_explanation">
-      <h2>Ya blew it kid:</h2>
-      <ul>
-        <% @restaurant.errors.full_messages.each do |msg| %>
-          <li><%= msg %></li>
-        <% end %>
-      </ul>
-    </div>
-  <% end %>
-
   <p>
     <%= form.label :name %><br>
     <%= form.text_field :name %>
