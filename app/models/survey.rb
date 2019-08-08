@@ -29,7 +29,7 @@ class Survey < ApplicationRecord
 
   def response_more_than_three?
     if response.nil? || response&.split(",").count < 3
-      errors.add(:response, "Pick a few, c’mon! (That’s three, Chump.)")
+      errors.add(:response, "Pick a few places. (That’s three, Chump.)")
     end
   end
 

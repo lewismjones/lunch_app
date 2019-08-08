@@ -5,19 +5,23 @@
     font-family: "Lucida Console", Monaco, monospace;
 }
 
+h1 {
+    font-size: 3em;
+    margin-bottom: 1vh;
+}
+
+h2 {
+    font-size: 2em;
+}
+
+h3 {
+    font-size: 1em;
+}
+
 #error_explanation {
     display: flex;
     flex-direction: column;
     color: #800000;
-}
-
-.main {
-    display: flex;
-    justify-content: center;
-    font-family: "Lucida Console", Monaco, monospace;
-    color: #003366;
-    display: flex;
-    flex-direction: column;
     margin: 0;
     flex: 1;
 }
@@ -45,24 +49,19 @@ tr:nth-child(odd) {
 #disappointed {
     flex-direction: row;
     justify-content: flex-start;
-    margin: 10px 0 10px 0;
+    margin: .1vh 0 .1vh 0;
 }
 
 #again {
     flex-direction: row;
     justify-content: flex-end;
-    margin: 10px 0 10px auto;
+    margin: .1vh 0 .1vh auto;
 
 }
 
 .voteColumn {
     text-align: center;
     vertical-align: middle;
-}
-
-ul {
-    margin: auto;
-    list-style-type: none;
 }
 
 .drinksColumn,
@@ -122,3 +121,25 @@ label[for=survey_post_lunch_true] {
     padding-right: 3px;
     padding-left: 3px;
 }
+
+ol {
+    margin: auto;
+    list-style-type: none;
+}
+
+li:before {
+    font-weight: bold;
+}
+
+li:nth-child(1):before {
+    content: "\1F990 ";
+}
+
+li:nth-child(2):before {
+    content: "\1F942"
+}
+
+li:nth-child(3):before {
+    content: "\1F37D";
+}
+
