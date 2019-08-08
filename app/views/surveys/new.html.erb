@@ -1,60 +1,60 @@
-    <h1>LunchApp</h1>
-    <h2>New Survey</h2>
-
-    <% if @survey.errors.any? %>
-    <div id="error_explanation">
-        <h3 id="disappointed">Not mad, just disappointed...</h3>
-        <ul>
-            <% @survey.errors.full_messages.each do |msg| %>
-            <li>
-                <%= msg.gsub("Response ", "") %>
-            </li>
-            <% end %>
-        </ul>
-        <h3 id="again">Let's try this again.</h3>
-    </div>
-    <% end %>
-
-    <%= form_with(model: @survey, url: surveys_path, local: true) do |form| %>
-    <p>
-        <%= form.label :participant, "Participant Name" %><br>
-        <%= form.text_field :participant, value: @survey.participant %>
-    </p>
-    <p>
-        <%= form.label :post_lunch, "Post Lunch?" %>
+<h1>LunchApp</h1>
+<h2>New Survey</h2>
+<% if @survey.errors.any? %>
+<div id="error_explanation">
+    <h3 id="disappointed">Not mad, just disappointed...</h3>
+    <ul>
+        <% @survey.errors.full_messages.each do |msg| %>
+        <li>
+            <%= msg.gsub("Response ", "") %>
+        </li>
+        <% end %>
+    </ul>
+    <h3 id="again">Let's try this again.</h3>
+</div>
+<% end %>
+<%= form_with(model: @survey, url: surveys_path, local: true) do |form| %>
+<section class="participant">
+    <%= form.label :participant, "Participant Name" %><br>
+    <%= form.text_field :participant, value: @survey.participant %>
+</section>
+<section class="post_lunch">
+    <%= form.label :post_lunch, "Post Lunch?" %>
         <%= form.label :post_lunch, "Yes", :value => "true"  %>
         <%= form.radio_button :post_lunch, true%>
         <%= form.label :post_lunch, "No", :value => "false"  %>
         <%= form.radio_button :post_lunch, false%>
-
-    </p>
-
-    <table>
-        <tr>
-            <th>Name</th>
-            <th>Drinks?</th>
-            <th>Brunch?</th>
-            <th>Wanna go?</th>
-        </tr>
-        <% @restaurants.each do |restaurant|%>
-        <tr>
-            <td class="nameColumn">
-                <%= form.label :response, restaurant.name.titleize, for: "survey_response_#{restaurant.id}"%>
-            </td>
-            <td class="drinksColumn">
-                <div class=<%=restaurant.drinks ? "green" : "red"%>> <%= restaurant.drinks ? "yeet" : "nope"   %> </div>
-            </td>
-            <td class="brunchColumn">
-                <div class=<%=restaurant.brunch ? "green" : "red"%>> <%= restaurant.brunch ? "yeet" : "nope"   %> </div>
-            </td>
-            <td class="voteColumn">
-                <%= form.check_box :response, {multiple: true, checked: @survey.response&.include?(restaurant.id.to_s)}, restaurant.id, nil%>
-            </td>
-        </tr>
-        <%end%>
-    </table>
-    <p>
-        <%= form.submit "Submit" %>
-    </p>
-    <% end %>
-    <%= link_to 'Home', home_path %>
+</section>
+<table>
+    <tr>
+        <th>Name</th>
+        <th>Drinks?</th>
+        <th>Brunch?</th>
+        <th>Wanna go?</th>
+    </tr>
+    <% @restaurants.each do |restaurant|%>
+    <tr>
+        <td class="nameColumn">
+            <%= form.label :response, restaurant.name.titleize, for: "survey_response_#{restaurant.id}"%>
+        </td>
+        <td class="drinksColumn">
+            <div class=<%=restaurant.drinks ? "green" : "red" %>>
+                <%= restaurant.drinks ? "yeet" : "nope"   %>
+            </div>
+        </td>
+        <td class="brunchColumn">
+            <div class=<%=restaurant.brunch ? "green" : "red" %>>
+                <%= restaurant.brunch ? "yeet" : "nope"   %>
+            </div>
+        </td>
+        <td class="voteColumn">
+            <%= form.check_box :response, {multiple: true, checked: @survey.response&.include?(restaurant.id.to_s)}, restaurant.id, nil%>
+        </td>
+    </tr>
+    <%end%>
+</table>
+<p>
+    <%= form.submit "Submit" %>
+</p>
+<% end %>
+<%= link_to 'Home', home_path %>
