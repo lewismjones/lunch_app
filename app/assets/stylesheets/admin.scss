@@ -1,13 +1,14 @@
 .admin-link-container {
   padding: 0px;
-  margin: 0px;
+  margin: 2em;
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
+  width: 100vw;
 }
 
 .admin-link {
-  padding: 15vh 10vh;
+  padding: 10vh 5vh;
   background-color: lightblue;
   margin: 1em;
   font-size: 1em;
