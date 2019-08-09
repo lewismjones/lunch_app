@@ -1,6 +1,5 @@
 <!DOCTYPE html>
 <html>
-
 <head>
     <title>LunchApp</title>
     <%= csrf_meta_tags %>
@@ -12,9 +11,11 @@
 </head>
 
 <body>
-	<%= render "layouts/header" %>
-    <main class="main"><%= yield %></main>
-    <%= render "layouts/footer" %>
+  <div class="bg-img" style="background-image: url(<%=GIFS.sample%>)">
+	   <%= render "layouts/header" %>
+      <main class="main"><%= yield %></main>
+     <%= render "layouts/footer" %>
+  </div>
 </body>
 
 </html>

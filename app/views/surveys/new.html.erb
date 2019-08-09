@@ -17,13 +17,15 @@
     <%= form.label :participant, "Participant Name" %><br>
     <%= form.text_field :participant, value: @survey.participant %>
 </section>
+<br>
 <section class="post_lunch">
     <%= form.label :post_lunch, "Post Lunch?" %>
-        <%= form.label :post_lunch, "Yes", :value => "true" , style: "margin-left: 1em;" %>
-        <%= form.radio_button :post_lunch, true%>
-        <%= form.label :post_lunch, "No", :value => "false"  %>
-        <%= form.radio_button :post_lunch, false%>
+        <%= form.label :post_lunch, "Yes", :value => "true" , style: "margin-left: 1em;"%>
+        <%= form.radio_button :post_lunch, true, class: "yes-no-checkbox" %>
+        <%= form.label :post_lunch, "No", :value => "false" %>
+        <%= form.radio_button :post_lunch, false, class: "yes-no-checkbox" %>
 </section>
+<br>
 <table>
     <tr>
         <th>Name</th>

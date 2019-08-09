@@ -7,11 +7,12 @@
 
 h1 {
     font-size: 3em;
-    margin-bottom: 1vh;
+    text-align: center;
 }
 
 h2 {
     font-size: 2em;
+    text-align: center;
 }
 
 h3 {
@@ -109,7 +110,6 @@ a:focus,
 .participant,
 .post_lunch {
     display: flex;
-    padding-bottom: 5px;
 }
 
 .participant {
@@ -143,3 +143,6 @@ li:nth-child(3):before {
     content: "\1F37D";
 }
 
+.yes-no-checkbox{
+  margin: .25em 1em 0 .25em;
+}

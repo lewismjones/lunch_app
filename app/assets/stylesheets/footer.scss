@@ -4,5 +4,6 @@ footer {
     bottom: 0;
     text-align: right;
     width: 100%;
-    padding-top: 1vh;
+    position: absolute;
+    z-index: 0;
 }

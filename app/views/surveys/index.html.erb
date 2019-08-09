@@ -1,3 +1,4 @@
+<%if @surveys.any? %>
 <h1>Surveys</h1>
 <table>
   <tr>
@@ -16,6 +17,9 @@
     </tr>
   <% end %>
 </table>
+<%else%>
+<h2>No Surveys</h2>
+<%end%>
 
 
 <%= link_to 'New Survey', new_survey_path %><br>

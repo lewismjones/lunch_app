@@ -1,5 +1,9 @@
+<div class="translucent">
+
 <h3>This is how we choose the lunch. Consider this your invite, dummy.</h3>
+<br>
 <h2> <%= link_to '>> Get started <<', new_survey_path %> </h2>
+<br>
 
 <article class="frontrunners">
   <% if @frontrunners.any? %>
@@ -9,6 +13,8 @@
       <%end%>
     </section>
   <%else%>
-    <p>No one has responded yet 😩 </p>
+    <h3>No one has responded yet 😩 </h3>
   <%end%>
 </article>
+
+</div>
