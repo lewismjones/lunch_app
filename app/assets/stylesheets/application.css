@@ -49,5 +49,6 @@ body {
 
 .translucent {
   background-color: rgba(250,250,250,.75);
-  padding: 2em;
+  margin: 1em;
+  padding: 1em;
 }
