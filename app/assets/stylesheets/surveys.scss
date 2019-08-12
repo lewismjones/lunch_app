@@ -1,6 +1,6 @@
 // Place all the styles related to the Surveys controller here.
 // They will automatically be included in application.css.
-// You can use Sass (SCSS) here: http://sass-lang.com/
+// You can use Sass (SCSS) here: http://sass-lang.com/ #315bf3
 * {
     font-family: "Lucida Console", Monaco, monospace;
 }
@@ -22,13 +22,16 @@ h3 {
 #error_explanation {
     display: flex;
     flex-direction: column;
-    color: #800000;
+    color: #ff1e00;
+    // color: #ff1e00;
     margin: 0;
     flex: 1;
 }
 
 table {
     border-collapse: collapse;
+    border-radius: .5em;
+    overflow: hidden;
 }
 
 table,
@@ -74,14 +77,14 @@ input[type=submit] {
     color: #fefbf7;
     border: 1px solid transparent;
     border-radius: 4%;
-    background-color: #325b84;
+    background-color: #0437f1;
     padding: 4px 24px;
     flex-direction: row;
     justify-content: flex-end;
 }
 
 input[type=submit]:hover {
-    background-color: #003366;
+    background-color: #315bf3;
 }
 
 input[type=submit]:active {
@@ -100,11 +103,11 @@ a:hover,
 a:active,
 a:focus,
 .red {
-    color: #800000;
+    color: #ff1e00;
 }
 
 .green {
-    color: #145314
+    color: #1DB954
 }
 
 .participant,
